@@ -1,12 +1,11 @@
 import com.github.gradle.node.npm.task.NpmTask
 
 plugins {
-    id("com.github.node-gradle.node") version "7.0.2"
+    id("com.github.node-gradle.node") version "7.1.0"
 }
 
 node {
-    version = "22.19.0"
-    npmVersion = "10.5.1"
+    version = "22.20.0"
     download = true
 }
 

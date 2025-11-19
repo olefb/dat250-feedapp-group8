@@ -1,1 +1,90 @@
+# Root-level configuration files
+HELP.md
+.env
+dump.rdb
+
+# Generated build directories at the root level
+build/
+
+# Gradle Artifacts (Shared wrapper, but ignore cache and project files)
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+### IntelliJ IDEA ###
 .idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+
+### VS Code ###
+.vscode/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# macOS
+.DS_Store
+
+### Backend
+# Explicitly ignore common outputs inside the backend module if they exist locally
+/backend/out/
+
+/backend/src/main/resources/static
+
+# Exception rules
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Frontend
+
+# Dependency and Build Artifacts
+/frontend/node_modules
+/frontend/dist
+/frontend/dist-ssr
+
+# Environment Files
+/frontend/.env
+/frontend/.env.development
+/frontend/.env.production
+
+# Logging and Debugging
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+/frontend/*.local
+/frontend/.gradle
+
+# Editor directories and files
+/frontend/.idea
+/frontend/*.suo
+/frontend/*.ntvs*
+/frontend/*.njsproj
+/frontend/*.sln
+/frontend/*.sw?
+
+# Exception for VS Code from frontend .gitignore
+!.vscode/extensions.json

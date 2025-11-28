@@ -10,8 +10,7 @@ import org.springframework.stereotype.Component;
 @Profile("kafka")
 public class KafkaEventListener {
 
-    private static final String POLL_VOTE_TOPIC_PREFIX = "poll-votes-";
-    private static final String ALL_POLL_VOTE_TOPICS_REGEX = POLL_VOTE_TOPIC_PREFIX + ".*";
+    private static final String POLL_VOTE_TOPIC = "poll-votes";
 
     private final PollManager pollManager;
 
@@ -19,7 +18,7 @@ public class KafkaEventListener {
         this.pollManager = pollManager;
     }
 
-    @KafkaListener(topicPattern = ALL_POLL_VOTE_TOPICS_REGEX, groupId = "${spring.kafka.consumer.group-id}")
+    @KafkaListener(topics = POLL_VOTE_TOPIC, groupId = "${spring.kafka.consumer.group-id}")
     public void handleVoteEvent(VoteEvent event) {
         System.out.println("\n[KAFKA LISTENER] Received Vote Event: " + event);
         Long newVoteId = pollManager.recordVoteFromEvent(event);

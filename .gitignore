@@ -43,7 +43,7 @@ bin/
 ### Backend
 # Explicitly ignore common outputs inside the backend module if they exist locally
 /backend/out/
-
+/backend/storage/
 /backend/src/main/resources/static
 
 # Exception rules

@@ -23,6 +23,9 @@ services:
 
       # Switch this between 'rabbitmq' and 'kafka'
       SPRING_PROFILES_ACTIVE: kafka
+      SPRING_H2_CONSOLE_SETTINGS_WEB_ALLOW_OTHERS: 'true'
+    volumes:
+      - ./backend/storage:/app/data
 
   valkey:
     image: valkey/valkey:9.0-alpine

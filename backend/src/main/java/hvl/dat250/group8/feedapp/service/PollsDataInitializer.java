@@ -27,6 +27,11 @@ public class PollsDataInitializer {
     }
 
     private void populateDataDirectly() {
+        if (!pollManager.listUsers().isEmpty()) {
+            System.out.println("Persistent Database detected. Skipping data initialization.");
+            return;
+        }
+
         String defaultPassword = passwordEncoder.encode("password");
 
         // Create users

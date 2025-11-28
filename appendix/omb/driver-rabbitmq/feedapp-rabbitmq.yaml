@@ -1,0 +1,12 @@
+name: RabbitMQ
+driverClass: io.openmessaging.benchmark.driver.rabbitmq.RabbitMqBenchmarkDriver
+
+# RabbitMQ Connection configuration
+amqpUris: amqp://localhost
+
+# Topology configuration
+exchangeType: topic
+exchangeName: benchmark-exchange
+durable: true
+persistentDelivery: true # Matches Kafka's disk persistence
+messagePersistence: true
